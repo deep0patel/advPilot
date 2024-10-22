@@ -1,0 +1,37 @@
+	<Folder>
+		<name>00 Aerodromes &amp; Airspace</name>
+		<open>1</open>
+		<Folder>
+			<name>Canadian Aerodromes (May 2020)</name>
+			<Document>
+				<name>Canadian Aerodromes May 2020</name>
+				<Style id="hl3">
+					<IconStyle>
+						<scale>1.2</scale>
+					</IconStyle>
+				</Style>
+				<Style id="sh_ylw-pushpin57">
+					<IconStyle>
+						<scale>1.2</scale>
+					</IconStyle>
+				</Style>
+				
+				<Style id="sh_ylw-pushpin54">
+					<IconStyle>
+						<scale>1.2</scale>
+					</IconStyle>
+				</Style>
+				<Placemark>
+					<name>CA-0187 Citadelle de Québec Heliport</name>
+					<styleUrl>#msn_ylw-pushpin2001</styleUrl>
+					<Point>
+						<coordinates>-71.20659637,46.80739975,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<name>CA-0200 Manic 5 Heliport</name>
+					<styleUrl>#msn_ylw-pushpin2001</styleUrl>
+					<Point>
+						<coordinates>-68.74042511,50.66110611000001,0</coordinates>
+					</Point>
+				</Placemark>

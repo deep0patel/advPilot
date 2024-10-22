@@ -1,0 +1,206 @@
+{
+  "dji": {
+    "mavic": {
+      "3 cine": {
+        "compliance": {
+          "weight": 0.963,
+          "max_altitude": 6000,
+          "max_speed": 19,
+          "flight_time": 45,
+          "max_permissible_altitude": 120,
+          "control_range": 15000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      },
+    "3 pro": {
+        "compliance": {
+          "weight": 0.963,
+          "max_altitude": 6000,
+          "max_speed": 19,
+          "flight_time": 45,
+          "max_permissible_altitude": 120,
+          "control_range": 15000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      },
+      "3 classic": {
+        "compliance": {
+          "weight": 0.958,
+          "max_altitude": 6000,
+          "max_speed": 19,
+          "flight_time": 46,
+          "max_permissible_altitude": 120,
+          "control_range": 15000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      },
+      "2 pro": {
+        "compliance": {
+          "weight": 0.907,
+          "max_altitude": 6000,
+          "max_speed": 20,
+          "flight_time": 31,
+          "max_permissible_altitude": 120,
+          "control_range": 8000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      },
+      "2 zoom": {
+        "compliance": {
+          "weight": 0.905,
+          "max_altitude": 6000,
+          "max_speed": 20,
+          "flight_time": 31,
+          "max_permissible_altitude": 120,
+          "control_range": 8000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      }
+    },
+    "air": {
+      "2": {
+        "compliance": {
+          "weight": 0.570,
+          "max_altitude": 5000,
+          "max_speed": 19,
+          "flight_time": 34,
+          "max_permissible_altitude": 120,
+          "control_range": 10000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "2s": {
+        "compliance": {
+          "weight": 0.595,
+          "max_altitude": 5000,
+          "max_speed": 19,
+          "flight_time": 31,
+          "max_permissible_altitude": 120,
+          "control_range": 12000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "3": {
+        "compliance": {
+          "weight": 0.600,
+          "max_altitude": 5000,
+          "max_speed": 19,
+          "flight_time": 34,
+          "max_permissible_altitude": 120,
+          "control_range": 12000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "3s": {
+        "compliance": {
+          "weight": 0.600,
+          "max_altitude": 5000,
+          "max_speed": 19,
+          "flight_time": 34,
+          "max_permissible_altitude": 120,
+          "control_range": 12000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      }
+    },
+    "mini": {
+      " ": {
+        "compliance": {
+          "weight": 0.249,
+          "max_altitude": 4000,
+          "max_speed": 16,
+          "flight_time": 31,
+          "max_permissible_altitude": 120,
+          "control_range": 10000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "se": {
+        "compliance": {
+          "weight": 0.249,
+          "max_altitude": 4000,
+          "max_speed": 16,
+          "flight_time": 31,
+          "max_permissible_altitude": 120,
+          "control_range": 10000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "2": {
+        "compliance": {
+          "weight": 0.249,
+          "max_altitude": 4000,
+          "max_speed": 16,
+          "flight_time": 31,
+          "max_permissible_altitude": 120,
+          "control_range": 10000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "3 pro": {
+        "compliance": {
+          "weight": 0.249,
+          "max_altitude": 4000,
+          "max_speed": 16,
+          "flight_time": 34,
+          "max_permissible_altitude": 120,
+          "control_range": 12000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      },
+      "4 pro": {
+        "compliance": {
+          "weight": 0.249,
+          "max_altitude": 4000,
+          "max_speed": 16,
+          "flight_time": 34,
+          "max_permissible_altitude": 120,
+          "control_range": 12000,
+          "compliance_category": "Basic Operations",
+          "certification_needed": false
+        }
+      }
+    }
+  },
+  "autel robotics": {
+    "evo": {
+      "lite+": {
+        "compliance": {
+          "weight": 0.835,
+          "max_altitude": 5000,
+          "max_speed": 19,
+          "flight_time": 40,
+          "max_permissible_altitude": 120,
+          "control_range": 12000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      },
+      "ii pro": {
+        "compliance": {
+          "weight": 1.174,
+          "max_altitude": 7000,
+          "max_speed": 20,
+          "flight_time": 40,
+          "max_permissible_altitude": 120,
+          "control_range": 9000,
+          "compliance_category": "Advanced Operations",
+          "certification_needed": true
+        }
+      }
+    }
+  }
+}

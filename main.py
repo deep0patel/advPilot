@@ -2,7 +2,7 @@ import os
 import geopandas as gpd
 from shapely.geometry import Point
 from geopy.geocoders import Nominatim
-from airspace_data_extractor import extract_airspace_data, decode_paths, create_geometries, create_geodataframe, save_airspace_data
+from Airspace.airspace_data_extractor import extract_airspace_data, decode_paths, create_geometries, create_geodataframe, save_airspace_data
 
 
 
