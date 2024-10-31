@@ -53,6 +53,8 @@ def find_closest_airport(lat, lon, airports):
     closest_airport = None
     min_distance = float('inf')  # Start with a very large number for minimum distance
     closest_coords = None
+    
+    # print(geodesic((43.9960821, -79.57132), (43.98614524, -79.72728968)).nautical)
 
     for airport in airports:
         airport_lat = airport['coordinates']['latitude']
@@ -62,6 +64,10 @@ def find_closest_airport(lat, lon, airports):
         distance = geodesic((lat, lon), (airport_lat, airport_lon)).nautical
 
         if distance < min_distance:
+            
+            # if min_distance < 10:
+                # print(min_distance)
+            
             min_distance = distance
             closest_airport = airport
             closest_coords = (airport_lat, airport_lon)
@@ -84,25 +90,25 @@ def find_closest_airport(lat, lon, airports):
 
 
 
-# Example usage:
-json_file = "Aerodromes_&_Airspace.json"
-airports = load_airports_from_json(json_file)
+# # Example usage:
+# json_file = "Aerodromes_&_Airspace.json"
+# airports = load_airports_from_json(json_file)
 
 
-latitude, longitude = 0 , 0
+# latitude, longitude = 0 , 0
         
-# Geocode address using the updated function
-try:
-    latitude, longitude = geocode_address("94b admiral rd", "toronto", "m5r2l6" )
-except ValueError as e:
-    print(f"Geocoding failed: {e}")
+# # Geocode address using the updated function
+# try:
+#     latitude, longitude = geocode_address("94b admiral rd", "toronto", "m5r2l6" )
+# except ValueError as e:
+#     print(f"Geocoding failed: {e}")
 
-# Find and print the closest airport
-closest_airport, distance_nm, direction = find_closest_airport(latitude, longitude, airports)
+# # Find and print the closest airport
+# closest_airport, distance_nm, direction = find_closest_airport(latitude, longitude, airports)
 
-if closest_airport:
-    print(f"Closest Airdrome: {closest_airport}")
-    print(f"Distance: {distance_nm:.2f} nautical miles")
-    print(f"Direction: {direction}")
-else:
-    print("No airports found.")
+# if closest_airport:
+#     print(f"Closest Airdrome: {closest_airport}")
+#     print(f"Distance: {distance_nm:.2f} nautical miles")
+#     print(f"Direction: {direction}")
+# else:
+#     print("No airports found.")

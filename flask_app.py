@@ -24,7 +24,7 @@ from Flight_Planning.flight_plan import (
 app = Flask(__name__)
 
 
-all_airdrome_airports_file = "Flight_Planning\Aerodromes_&_Airspace.json"
+all_airdrome_airports_file = "Flight_Planning//Aerodromes_&_Airspace.json"
 airports = load_airports_from_json(all_airdrome_airports_file)
 
 
@@ -71,54 +71,69 @@ else:
 
 @app.route('/airspace', methods=['GET'])
 def get_airspace_info():
-    
     try:
-                
         # Decode URL-encoded strings
         street_address = request.args.get('street_address').strip()
         city = request.args.get('city').strip()
         postal_code = request.args.get('postal_code', '').strip() or None
         operating_altitude = float(request.args.get('operating_altitude').strip()) or 699
-        
+
         # Geocode address using the updated function
         try:
             latitude, longitude = geocode_address(street_address, city, postal_code)
+            
+            # print(latitude, longitude)
         except ValueError as e:
             print(f"Geocoding failed: {e}")
             return jsonify({'error': str(e)}), 400
-        
 
         # Find containing airspaces
         containing_airspaces = find_airspace(airspace_gdf, latitude, longitude)
-        
 
         # Find relevant airspaces
         relevant_airspaces = filter_airspaces_by_altitude(containing_airspaces, operating_altitude)
 
-        closest_airport = find_closest_airport(latitude, longitude, airports)
-        
+        # Find the closest airport
+        closest_airport, distance_nm, direction = find_closest_airport(latitude, longitude, airports)
+
         # Prepare results
         if not relevant_airspaces.empty:
-            airspace_info = []  
+            airspace_info = []
             for idx, row in relevant_airspaces.iterrows():
                 airspace_info.append({
-                    'Airport Details' : (row['title']).replace('<br>', ' '),
+                    'Airport Details': (row['title']).replace('<br>', ' '),
                     'Airspace Class': row['airClass'],
                     'Airspace Type': row['airType'],
                     'Altitudes': f"{row['altLow']} to {row['altHigh']}",
                     'Description': (row['description']).replace('<br>', ' ')
                 })
-            
-            # print(json.dumps(airspace_info))
-            
-            return jsonify(airspace_info), 200
-                
+
+            # Add closest airport details to the response
+            result = {
+                'airspace_info': airspace_info,
+                'closest_airport': {
+                    'name': closest_airport,
+                    'distance_nautical_miles': f"{distance_nm:.2f} NM",
+                    'direction': direction
+                }
+            }
+
+            return jsonify(result), 200
 
         else:
-            return jsonify({'message': 'No airspace restrictions at your operating altitude for this location.'}), 200
+            result = {
+                'message': 'No airspace restrictions at your operating altitude for this location.',
+                'closest_airport': {
+                    'name': closest_airport,
+                    'distance_nautical_miles': f"{distance_nm:.2f} NM",
+                    'direction': direction
+                }
+            }
+            return jsonify(result), 200
 
     except Exception as e:
         return jsonify({'error': f"An error occurred: {str(e)}"}), 500
+
     
     
     
@@ -137,7 +152,7 @@ def search_drone_endpoint():
     result = search_drone(drone_data, search_query)
     
     if result:
-        return jsonify({"drone_details": result}), 200
+        return jsonify(result), 200
     else:
         return jsonify({"message": "No matching result found"}), 404
 
